@@ -1,0 +1,27 @@
+ResourceGroup,WebApp
+DPE-STACK-PROD2-ANZ , dpe-prod2-payments-softbank-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-services-endpointsecurity-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-payments-giftcard-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-services-orderrouter-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-payments-valuecard-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-services-menu-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-ui-olo-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-payments-mitsubishi-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-payments-paypal-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-payments-aumobile-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-payments-cash-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-services-order-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-payments-yahoo-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-storesearch-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-payments-cybersource-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-www-nz-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-services-stores-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-payments-adyen-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-services-aggregators-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-payments-rakuten-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-services-apigateway-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-www-au-aue 
+DPE-STACK-PROD2-ANZ , dpe-prod2-www-au-aus 
+DPE-STACK-PROD2-ANZ , dpe-prod2-www-nz-aus 
+DPE-STACK-PROD2-ANZ , dpe-prod2-www-nz-sea 
+DPE-STACK-PROD2-ANZ , dpe-prod2-www-au-sea 

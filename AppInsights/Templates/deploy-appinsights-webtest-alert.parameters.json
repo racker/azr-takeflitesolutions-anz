@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "webTestName": { "value": "webtest1" },
+    "appName": { "value": "appinsights-cmp" },
+    "URL": { "value": "http://unit21webapp.azurewebsites.net/" },
+    "firstLocation": { "value": "apac-jp-kaw-edge" },
+    "secondLocation": { "value": "apac-hk-hkn-azr" },
+    "thirdLocation": { "value": "apac-sg-sin-azr" },
+    "webhookUrl": { "value": "https://rax-web-tests.azurewebsites.net/api/GenericWebhookCSharp1?code=HLActqaUDDRrWJpZFXFQzuBRCPAFdXdCRZfiu8S3bD8HtF5nGGcgPA==" },
+      "emailRecipients": { "value": "lee.hardy@rackspace.com" }
+    }
+}

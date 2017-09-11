@@ -1,0 +1,125 @@
+﻿{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "webTestName": {
+        "type": "string" 
+      },
+      "appName": {
+        "type": "string" 
+      },
+      "URL": {
+        "type": "string" 
+      },
+      "firstLocation": {
+        "type": "string"
+      },
+      "secondLocation": {
+        "type": "string"
+      },
+      "thirdLocation": {
+        "type": "string"
+      },
+      "webhookUrl": {
+        "type": "string"
+      },
+      "emailRecipients": {
+        "type": "string"
+      },
+      "webTestXML": {
+        "type": "string"
+      }
+    },
+  "variables": {
+    "alertRuleName": "[concat(parameters('webTestName'), '-', toLower(parameters('appName')), '-', subscription().subscriptionId)]",
+    "failedLocationCount": "3"
+  },
+  "resources": [
+    {
+      "id": "[resourceId('Microsoft.Insights/alertrules', variables('alertRuleName'))]",
+      "name": "[variables('alertRuleName')]",
+      "apiVersion": "2014-04-01",
+      "type": "Microsoft.Insights/alertrules",
+      "location": "East US", //need to parameterize when out of preview & more locations available
+      "dependsOn": [
+        "[concat('Microsoft.Insights/webtests/', parameters('webTestName'))]"
+      ],
+      "tags": {
+        "[concat('hidden-link:', resourceId('Microsoft.Insights/components', parameters('appName')))]": "Resource",
+        "[concat('hidden-link:', resourceId('Microsoft.Insights/webtests', concat(toLower(parameters('webTestName')))))]": "Resource"
+      },
+      "properties": {
+        "name": "[variables('alertRuleName')]",
+        "apiVersion": "2014-04-01",
+        "description": "URL Ping Alert",
+        "isEnabled": true,
+        "condition": {
+          "$type": "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.LocationThresholdRuleCondition, Microsoft.WindowsAzure.Management.Mon.Client",
+          "odata.type": "Microsoft.Azure.Management.Insights.Models.LocationThresholdRuleCondition",
+          "dataSource": {
+            "$type": "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.RuleMetricDataSource, Microsoft.WindowsAzure.Management.Mon.Client",
+            "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleMetricDataSource",
+            "resourceUri": "[concat(resourceId('Microsoft.Insights/webtests', concat(parameters('webTestName'))))]",
+            "metricName": "GSMT_AvRaW"
+          },
+          "windowSize": "PT5M",
+          "failedLocationCount": "[variables('failedLocationCount')]"
+        },
+        "lastUpdatedTime": "2016-11-02T00:16:06.3858169Z",
+        "provisioningState": "Succeeded",
+        "actions": [
+          {
+            "$type": "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.RuleWebhookAction, Microsoft.WindowsAzure.Management.Mon.Client",
+            "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleWebhookAction",
+            "serviceUri": "[parameters('webhookUrl')]"
+          },
+          {
+            "$type": "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.RuleEmailAction, Microsoft.WindowsAzure.Management.Mon.Client",
+            "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleEmailAction",
+            "sendToServiceOwners": true,
+            "customEmails": [
+              "[parameters('emailRecipients')]"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "[resourceId('Microsoft.Insights/webtests', parameters('webTestName'))]",
+      "name": "[parameters('webTestName')]",
+      "apiVersion": "2014-04-01",
+      "type": "Microsoft.Insights/webtests",
+      "location": "eastus",
+      "tags": {
+        "[concat('hidden-link:', resourceId('Microsoft.Insights/components', parameters('appName')))]": "Resource"
+      },
+      "properties": {
+        "provisioningState": "Succeeded",
+        "Name": "[parameters('webTestName')]",
+        "apiVersion": "2014-04-01",
+        "Description": "URL Ping Test",
+        "Enabled": true,
+        "Frequency": 300,
+        "Timeout": 30,
+        "Kind": "ping",
+        "Locations": [
+          {
+            "Id": "[parameters('firstLocation')]"
+          },
+          {
+            "Id": "[parameters('secondLocation')]"
+          },
+          {
+            "Id": "[parameters('thirdLocation')]"
+          }
+        ],
+        "Configuration": {
+          "WebTest": "[parameters('webTestXML')]"
+        },
+        "SyntheticMonitorId": "[parameters('webTestName')]"
+      }
+    }
+  ],
+    "outputs": {
+    }
+}

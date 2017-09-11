@@ -1,0 +1,29 @@
+﻿{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "appInsightsComponentName": {
+        "defaultValue": "appinsights-component",
+        "type": "String"
+      }
+    },
+    "variables": {
+    },
+    "resources": [
+      {
+        "type": "microsoft.insights/components",
+        "kind": "web",
+        "name": "[parameters('appInsightsComponentName')]",
+        "apiVersion": "2014-04-01",
+        "location": "eastus",
+        "tags": {},
+        "properties": {
+          "ApplicationId": "[parameters('appInsightsComponentName')]"
+        },
+        "resources": [],
+        "dependsOn": []
+      }
+    ],
+    "outputs": {
+    }
+}

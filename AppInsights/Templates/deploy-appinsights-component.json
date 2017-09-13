@@ -15,7 +15,7 @@
         "kind": "web",
         "name": "[parameters('appInsightsComponentName')]",
         "apiVersion": "2014-04-01",
-        "location": "eastus",
+        "location": "southcentralus",
         "tags": {},
         "properties": {
           "ApplicationId": "[parameters('appInsightsComponentName')]"

@@ -40,7 +40,7 @@
       "name": "[variables('alertRuleName')]",
       "apiVersion": "2014-04-01",
       "type": "Microsoft.Insights/alertrules",
-      "location": "East US", //need to parameterize when out of preview & more locations available
+      "location": "South Central US", //need to parameterize when out of preview & more locations available
       "dependsOn": [
         "[concat('Microsoft.Insights/webtests/', parameters('webTestName'))]"
       ],
@@ -89,7 +89,7 @@
       "name": "[parameters('webTestName')]",
       "apiVersion": "2014-04-01",
       "type": "Microsoft.Insights/webtests",
-      "location": "eastus",
+      "location": "southcentralus",
       "tags": {
         "[concat('hidden-link:', resourceId('Microsoft.Insights/components', parameters('appName')))]": "Resource"
       },

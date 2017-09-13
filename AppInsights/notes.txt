@@ -1,7 +1,10 @@
-https://tf-takefliteservice-scup01.tflite.com/TakeFliteWCFServiceJ/TakeFliteServices.svc
-https://tf-takefliteservice-scup01.tflite.com/TakeFliteWCFServiceI/TakeFliteServices.svc
-https://tf-fareengine-scup01.tflite.com/FareEngineWCFServiceH/FareServices.svc
-https://tf-companyrulesservice-scup01.tflite.com/CompanyRulesService/CompanyRules.svc
+https://tf-takefliteservice-scup01.tflite.com/TakeFliteWCFServiceJ/TakeFliteServices.svc?wsdl
+https://tf-takefliteservice-scup01.tflite.com/TakeFliteWCFServiceI/TakeFliteServices.svc?wsdl
+https://tf-fareengine-scup01.tflite.com/FareEngineWCFServiceH/FareServices.svc?wsdl
+https://tf-companyrulesservice-scup01.tflite.com/CompanyRulesService/CompanyRules.svc?wsdl
+https://tf-publicservice-scup01.tflite.com/TakeflitePublicServiceT/TakeflitePublicServices.asmx?wsdl
+https://tf-mobileservice-scup01.tflite.com/MobileServiceT/MobileServices.asmx?wsdl
+
 https://tf-bookingportal-scup01.tflite.com/Public/SA/Booking/Search
 https://tf-legacybookingportal-scup01.tflite.com/takeflitepublicwfp/PgCreateOpenBooking.aspx
 https://tf-legacybookingportal-scup01.tflite.com/takeflitepublicnln/
@@ -11,11 +14,16 @@ https://tf-legacybookingportal-scup01.tflite.com/takeflitepublickma/PgAgentLogin
 https://tf-externalportal-scup01.tflite.com/ExternalPortal/CompanyRules/
 https://tf-externalportal-scup01.tflite.com/ExternalPortal/IapiManager/
 https://tf-externalservice-scup01.tflite.com/TakefliteExternalServiceA/TakefliteExternalService.svc
-https://tf-publicservice-scup01.tflite.com/TakeflitePublicServiceT/TakeflitePublicServices.asmx
 https://tf-lepservice-scup01.tflite.com/Aetm/LEPservice.svc
 https://tf-aetmprofile-scup01.tflite.com/AetmProfile/sync.profile
-https://tf-mobileservice-scup01.tflite.com/MobileServiceT/MobileServices.asmx
-https://admin10125apps1.tflite.com/TakefliteExternalServiceA/TakefliteExternalService.svc 
+https://admin10125apps1.tflite.com/TakefliteExternalServiceA/TakefliteExternalService.svc
+
+
+WSDL - content match - </wsdl:definitions>
+otherwise check for 
+HTTP200 - OK
+
+test locations - san jose, san antonio, miami
 
 
 Region
@@ -31,13 +39,14 @@ Azure Subscription
 0a723bba-4077-498c-bddc-0434e10b7df7
 
 
-Rackspace
-rackspace@tflite.onmicrosoft.com
+runbook
+https://one.rackspace.com/display/FSFA/5047349-Takeflite+Solutions+North+America
 
 
+Web Apps
+https://one.rackspace.com/display/FSFA/5047349-Takeflite+Solutions+North+America#id-5047349-TakefliteSolutionsNorthAmerica-AzureWebApporAppServicePlan
+
+https://rax.io/azr-5047349-webapps
 
 
-App svcs
-tf-takefliteservice-scup01.azurewebsites.net
-tf-fareengine-scup01.azurewebsites.net
 
